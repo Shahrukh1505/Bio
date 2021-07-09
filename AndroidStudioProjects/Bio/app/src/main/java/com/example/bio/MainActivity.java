@@ -11,12 +11,14 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.bio.data.Bio;
 import com.example.bio.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 private EditText enterHobbies;
 private TextView hobbies;
+private final Bio bio = new Bio();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +26,12 @@ private TextView hobbies;
 //
 //        enterHobbies = findViewById(R.id.hobbies);
 //        hobbies = findViewById(R.id.hobbiesText);
+
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-   binding.done.setOnClickListener(new View.OnClickListener() {
+   bio.setName("Shahrukh Ansari");
+
+   binding.setBio(bio);
+        binding.done.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View v) {
            addHobbies(v);
@@ -34,8 +40,9 @@ private TextView hobbies;
     }
 
     public void addHobbies(View view) {
-        binding.hobbiesText.setText("Hobbies: %s" + binding.hobbies.getText().toString().trim());
-binding.hobbies.setVisibility(View.VISIBLE);
+        bio.setHobbies("Hobbies: %s" + binding.hobbies.getText().toString().trim());
+//        binding.hobbiesText.setText("Hobbies: %s" + binding.hobbies.getText().toString().trim());
+//binding.hobbies.setVisibility(View.VISIBLE);
 binding.invalidateAll();
 //        hobbies.setText("Hobbies: %s" + enterHobbies.getText().toString().trim());
 //hobbies.setVisibility(View.VISIBLE);
