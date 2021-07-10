@@ -40,9 +40,9 @@ private final Bio bio = new Bio();
     }
 
     public void addHobbies(View view) {
-        bio.setHobbies("Hobbies: %s" + binding.hobbies.getText().toString().trim());
+        bio.setHobbies("Hobbies: " + binding.hobbies.getText().toString().trim());
 //        binding.hobbiesText.setText("Hobbies: %s" + binding.hobbies.getText().toString().trim());
-//binding.hobbies.setVisibility(View.VISIBLE);
+binding.hobbiesText.setVisibility(View.VISIBLE);
 binding.invalidateAll();
 //        hobbies.setText("Hobbies: %s" + enterHobbies.getText().toString().trim());
 //hobbies.setVisibility(View.VISIBLE);

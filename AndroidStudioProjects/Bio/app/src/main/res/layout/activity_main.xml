@@ -72,7 +72,7 @@
                 android:lineSpacingMultiplier="1.9"
                 android:text="@string/my_bio"
                 android:textStyle="bold"
-                android:visibility="invisible" />
+                 />
         </ScrollView>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
